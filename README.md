@@ -5,42 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+body {
+  margin:0;
   font-family: Arial, Helvetica, sans-serif;
-  background:#f3f4f6;
-  color:#111827;
+  background:#ffffff;
+  color:#111;
 }
 
-/* ===== HEADER & FOOTER FULL WIDTH ===== */
+/* ===== FULL WIDTH HEADER / FOOTER IMAGES ===== */
 .header-banner,
 .footer-banner {
-  width: 100vw;
-  max-width: 100vw;
-  height: 240px;
-  object-fit: cover;
-  display: block;
+  width:100%;
+  display:block;
 }
 
 /* ===== NAV ===== */
 header {
-  background:#0f172a;
-  color:white;
-  padding:16px 28px;
+  background:#ffffff;
+  padding:18px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  border-bottom:1px solid #e5e7eb;
 }
 
-.logo { font-weight:700; font-size:18px; }
+.logo {
+  font-weight:700;
+  font-size:20px;
+}
 
 .header-search input {
-  padding:10px;
-  border-radius:8px;
-  border:none;
-  width:260px;
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid #d1d5db;
+  width:280px;
 }
 
 .signin-btn {
@@ -48,73 +46,69 @@ header {
   border:none;
   color:white;
   padding:10px 16px;
-  border-radius:8px;
+  border-radius:10px;
   font-weight:600;
   cursor:pointer;
 }
 
 /* ===== HERO ===== */
 .hero {
-  background:#1f2937;
-  color:white;
+  background:#f3f4f6;
   text-align:center;
-  padding:70px 20px;
+  padding:80px 20px;
 }
 
 .hero-search input {
-  width:560px;
-  max-width:92%;
-  padding:16px;
+  width:600px;
+  max-width:95%;
+  padding:18px;
   border-radius:14px;
-  border:none;
+  border:1px solid #d1d5db;
   font-size:16px;
-  margin-top:20px;
 }
 
-/* ===== CONTENT ===== */
-.container {
-  max-width:1100px;
-  margin:auto;
-  padding:50px 20px;
+/* ===== FULL WIDTH SECTIONS ===== */
+.section {
+  padding:60px 6%;
 }
 
+/* ===== CATEGORY GRID ===== */
 .grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  margin-top:20px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
 }
 
 .card {
   background:white;
-  border-radius:14px;
-  padding:26px;
+  border-radius:16px;
+  padding:28px;
   border:1px solid #e5e7eb;
   transition:.25s;
 }
 
 .card:hover {
-  transform:translateY(-5px);
-  box-shadow:0 10px 24px rgba(0,0,0,0.08);
+  transform:translateY(-6px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.08);
 }
 
 /* ===== IMAGE BLOCK — ORIGINAL SIZE ===== */
 .image-grid {
   display:grid;
   grid-template-columns:repeat(3, 1fr);
-  gap:14px;
-  margin-top:40px;
+  gap:16px;
+  margin-top:30px;
 }
 
 .img-wrap {
   overflow:hidden;
-  border-radius:14px;
-  background:white;
+  border-radius:16px;
+  background:#f9fafb;
 }
 
 .img-wrap img {
-  width:100%;       /* fit column width */
-  height:auto;      /* keep original ratio */
+  width:100%;
+  height:auto;
   display:block;
   transition: transform .45s ease;
 }
@@ -126,33 +120,32 @@ header {
 /* ===== ARTICLES ===== */
 .article {
   background:white;
-  border-radius:12px;
-  padding:18px;
-  margin-bottom:14px;
+  border-radius:14px;
+  padding:20px;
   border:1px solid #e5e7eb;
+  margin-bottom:14px;
 }
 
 .tag {
   display:inline-block;
-  background:#e5e7eb;
-  padding:4px 8px;
-  border-radius:8px;
+  background:#eef2ff;
+  padding:4px 10px;
+  border-radius:10px;
   font-size:12px;
   margin-top:8px;
 }
 
 /* ===== SUPPORT ===== */
 .support {
-  background:#e0e7ff;
-  border-radius:16px;
-  padding:40px;
+  background:#eef2ff;
+  border-radius:18px;
+  padding:50px;
   text-align:center;
-  margin-top:40px;
 }
 
 button {
-  padding:12px 18px;
-  border-radius:10px;
+  padding:14px 22px;
+  border-radius:12px;
   border:none;
   font-weight:700;
   cursor:pointer;
@@ -164,17 +157,17 @@ button {
 
 /* ===== FOOTER ===== */
 footer {
-  background:#0f172a;
-  color:#cbd5f1;
   text-align:center;
-  padding:26px;
+  padding:30px;
+  background:#f9fafb;
+  color:#555;
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP STATIC HEADER IMAGE -->
+<!-- HEADER IMAGE -->
 <img src="header.png" class="header-banner">
 
 <header>
@@ -192,8 +185,8 @@ footer {
   </div>
 </section>
 
-<div class="container">
-
+<!-- CATEGORIES -->
+<div class="section">
 <h2>Browse Categories</h2>
 
 <div class="grid">
@@ -202,12 +195,15 @@ footer {
   <div class="card">Integrations</div>
   <div class="card">Developer APIs</div>
 </div>
+</div>
 
-<h2 style="margin-top:50px;">Feature Gallery</h2>
+<!-- IMAGE BLOCK -->
+<div class="section">
+<h2>Feature Gallery</h2>
 
 <div class="image-grid">
   <div class="img-wrap"><img src="1.jpg"></div>
-  <div class="img-wrap"><img src="2.png"></div>
+  <div class="img-wrap"><img src="2.jpg"></div>
   <div class="img-wrap"><img src="3.jpg"></div>
   <div class="img-wrap"><img src="4.jpg"></div>
   <div class="img-wrap"><img src="5.jpg"></div>
@@ -216,23 +212,28 @@ footer {
   <div class="img-wrap"><img src="8.jpg"></div>
   <div class="img-wrap"><img src="9.jpg"></div>
 </div>
+</div>
 
-<h2 style="margin-top:50px;">Popular Articles</h2>
+<!-- ARTICLES -->
+<div class="section">
+<h2>Popular Articles</h2>
 <div id="articles"></div>
+</div>
 
+<!-- SUPPORT -->
+<div class="section">
 <div class="support">
   <h3>Still need help?</h3>
   <button class="primary">Open Case</button>
   <button class="outline">Start Chat</button>
 </div>
-
 </div>
 
-<!-- BOTTOM STATIC FOOTER IMAGE -->
+<!-- FOOTER IMAGE -->
 <img src="footer.png" class="footer-banner">
 
 <footer>
-Demo Help Center UI — Built for Feature Demonstrations
+Demo Help Center UI — Full Width Layout
 </footer>
 
 <script>
