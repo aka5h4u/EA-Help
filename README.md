@@ -263,7 +263,7 @@ footer {
 
 
 <footer>
-	<img src="footer.png" class="footer-banner">
+	<img src="footer.png" class="footer-banner"> 
 </footer>
 
 <script>
