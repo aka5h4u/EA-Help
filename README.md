@@ -1,5 +1,4 @@
-<html>
-  
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Help Center Demo</title>
@@ -13,9 +12,14 @@ body {
   color:#111827;
 }
 
-img { max-width:100%; display:block; }
+img { display:block; width:100%; }
 
-/* Header */
+.header-banner {
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
 header {
   background:#0f172a;
   color:white;
@@ -28,10 +32,10 @@ header {
 .logo { font-weight:700; font-size:18px; }
 
 .header-search input {
-  padding:10px 12px;
+  padding:10px;
   border-radius:8px;
   border:none;
-  width:280px;
+  width:260px;
 }
 
 .signin-btn {
@@ -40,26 +44,16 @@ header {
   color:white;
   padding:10px 16px;
   border-radius:8px;
-  cursor:pointer;
   font-weight:600;
+  cursor:pointer;
 }
 
-/* Header banner image */
-.header-banner {
-  width:100%;
-  height:220px;
-  object-fit:cover;
-}
-
-/* Hero */
 .hero {
   background:#1f2937;
   color:white;
   text-align:center;
-  padding:60px 20px;
+  padding:70px 20px;
 }
-
-.hero h1 { font-size:40px; }
 
 .hero-search input {
   width:560px;
@@ -71,21 +65,6 @@ header {
   margin-top:20px;
 }
 
-/* Image rows */
-.image-row {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
-  margin-top:30px;
-}
-
-.image-row img {
-  border-radius:12px;
-  height:160px;
-  object-fit:cover;
-}
-
-/* Layout */
 .container {
   max-width:1100px;
   margin:auto;
@@ -102,9 +81,8 @@ header {
 .card {
   background:white;
   border-radius:14px;
-  padding:28px;
+  padding:26px;
   border:1px solid #e5e7eb;
-  cursor:pointer;
   transition:.2s;
 }
 
@@ -113,11 +91,32 @@ header {
   box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Articles */
+.image-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:14px;
+  margin-top:40px;
+}
+
+.img-wrap {
+  overflow:hidden;
+  border-radius:14px;
+}
+
+.img-wrap img {
+  height:200px;
+  object-fit:cover;
+  transition: transform .4s ease;
+}
+
+.img-wrap:hover img {
+  transform: scale(1.15);
+}
+
 .article {
   background:white;
   border-radius:12px;
-  padding:18px 22px;
+  padding:18px;
   margin-bottom:14px;
   border:1px solid #e5e7eb;
 }
@@ -131,7 +130,6 @@ header {
   margin-top:8px;
 }
 
-/* Support */
 .support {
   background:#e0e7ff;
   border-radius:16px;
@@ -140,37 +138,38 @@ header {
   margin-top:40px;
 }
 
-.support button {
+button {
   padding:12px 18px;
   border-radius:10px;
   border:none;
-  cursor:pointer;
   font-weight:700;
+  cursor:pointer;
   margin:8px;
 }
 
 .primary { background:#2563eb; color:white; }
 .outline { background:white; border:2px solid #2563eb; color:#2563eb; }
 
-/* Footer banner */
 .footer-banner {
   width:100%;
-  height:200px;
+  height:220px;
   object-fit:cover;
+  margin-top:60px;
 }
 
 footer {
   background:#0f172a;
   color:#cbd5f1;
   text-align:center;
-  padding:30px;
+  padding:26px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER NAV -->
+<img src="header.png" class="header-banner">
+
 <header>
   <div class="logo">Help Center Demo</div>
   <div class="header-search">
@@ -179,22 +178,10 @@ footer {
   <button class="signin-btn">Sign In</button>
 </header>
 
-<!-- HEADER IMAGE -->
-<img src="header.png" class="header-banner">
-
-<!-- HERO -->
 <section class="hero">
   <h1>How can we help?</h1>
-  <p>Search guides, troubleshooting steps, and feature documentation</p>
   <div class="hero-search">
     <input id="searchBox" placeholder="Search topics, errors, features">
-  </div>
-
-  <!-- HERO IMAGES -->
-  <div class="image-row">
-    <img src="1.jpg">
-    <img src="2.jpg">
-    <img src="3.jpg">
   </div>
 </section>
 
@@ -209,34 +196,31 @@ footer {
   <div class="card">Developer APIs</div>
 </div>
 
-<!-- CATEGORY IMAGES -->
-<div class="image-row">
-  <img src="4.jpg">
-  <img src="5.jpg">
-  <img src="6.jpg">
+<h2>Feature Gallery</h2>
+
+<div class="image-grid">
+  <div class="img-wrap"><img src="1.jpg"></div>
+  <div class="img-wrap"><img src="2.jpg"></div>
+  <div class="img-wrap"><img src="3.jpg"></div>
+  <div class="img-wrap"><img src="4.jpg"></div>
+  <div class="img-wrap"><img src="5.jpg"></div>
+  <div class="img-wrap"><img src="6.jpg"></div>
+  <div class="img-wrap"><img src="7.jpg"></div>
+  <div class="img-wrap"><img src="8.jpg"></div>
+  <div class="img-wrap"><img src="9.jpg"></div>
 </div>
 
-<h2 style="margin-top:50px;">Popular Articles</h2>
-
+<h2 style="margin-top:40px;">Popular Articles</h2>
 <div id="articles"></div>
 
 <div class="support">
   <h3>Still need help?</h3>
-  <p>Create a support case or start a live chat demo</p>
   <button class="primary">Open Case</button>
   <button class="outline">Start Chat</button>
-
-  <!-- SUPPORT IMAGES -->
-  <div class="image-row">
-    <img src="7.jpg">
-    <img src="8.jpg">
-    <img src="9.jpg">
-  </div>
 </div>
 
 </div>
 
-<!-- FOOTER IMAGE -->
 <img src="footer.png" class="footer-banner">
 
 <footer>
@@ -246,10 +230,8 @@ Demo Help Center UI — Built for Feature Demonstrations
 <script>
 const articles = [
  {title:"Reset your password", tag:"Account"},
- {title:"Fix login verification errors", tag:"Account"},
  {title:"Configure payment gateway", tag:"Payments"},
- {title:"Integration setup steps", tag:"Integrations"},
- {title:"API authentication flow", tag:"Developer"}
+ {title:"Integration setup steps", tag:"Integrations"}
 ];
 
 function render(list){
@@ -261,13 +243,7 @@ function render(list){
     </div>
   `).join("");
 }
-
 render(articles);
-
-document.getElementById("searchBox").addEventListener("input", e=>{
- const q = e.target.value.toLowerCase();
- render(articles.filter(a => a.title.toLowerCase().includes(q)));
-});
 </script>
 
 </body>
