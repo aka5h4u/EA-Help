@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>EA Help Center Demo</title>
+<title>Help Center Demo — Dark</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -23,7 +23,7 @@ html, body {
   display:block;
 }
 
-/* ===== NAV ===== */
+/* ===== HEADER ===== */
 header {
   background:#111827;
   padding:18px 40px;
@@ -33,6 +33,7 @@ header {
   border-bottom:1px solid #1f2937;
 }
 
+/* LOGO — TOP LEFT */
 .logo-wrap {
   display:flex;
   align-items:center;
@@ -40,7 +41,9 @@ header {
 }
 
 .logo-wrap img {
-  height:36px;
+  height:40px;
+  width:auto;
+  display:block;
 }
 
 .logo-text {
@@ -49,6 +52,7 @@ header {
   color:#f9fafb;
 }
 
+/* SEARCH */
 .header-search input {
   padding:10px 14px;
   border-radius:10px;
@@ -163,12 +167,24 @@ header {
   text-align:center;
 }
 
+/* HELPOTRON IMAGE — ORIGINAL SIZE + CENTER */
 .agent-box img {
-  width:160px;
-  margin-bottom:20px;
+  display:block;
+  margin:0 auto 20px auto;
+  width:auto;
+  height:auto;
+  max-width:100%;
 }
 
-.primary { background:#2563eb; color:white; padding:14px 22px; border-radius:12px; border:none; }
+.primary {
+  background:#2563eb;
+  color:white;
+  padding:14px 22px;
+  border-radius:12px;
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+}
 
 /* ===== FOOTER ===== */
 footer {
@@ -182,10 +198,10 @@ footer {
 
 <body>
 
-<!-- HEADER IMAGE -->
 <img src="header.png" class="header-banner">
 
 <header>
+  <!-- TOP LEFT LOGO -->
   <div class="logo-wrap">
     <img src="EA.svg">
     <div class="logo-text">Help Center</div>
@@ -235,24 +251,22 @@ footer {
 <div id="articles"></div>
 </div>
 
-<!-- ===== AI AGENT / MESSAGING SECTION ===== -->
+<!-- AI AGENT SECTION -->
 <div class="section">
   <div class="agent-box">
     <img src="helpotron.png">
-    <h2>Meet Helpotron 🤖</h2>
-    <p>Your in-game style support AI. Ask anything or start a live support chat.</p>
+    <h2>Meet Helpotron</h2>
+    <p>Your gamer-style support AI. Ask anything or start chat.</p>
     <button class="primary">Launch Support Chat</button>
   </div>
 </div>
 
-<!-- FOOTER IMAGE -->
 <img src="footer.png" class="footer-banner">
 
 <footer>
 Demo Help Center UI — Dark Theme
 </footer>
 
-<!-- PAGE SCRIPT -->
 <script>
 const articles = [
  {title:"Reset your password", tag:"Account"},
@@ -274,7 +288,7 @@ function render(list){
 render(articles);
 </script>
 
-<!-- ===== SALESFORCE EMBEDDED MESSAGING ===== -->
+<!-- SALESFORCE EMBEDDED MESSAGING -->
 <script type='text/javascript'>
 function initEmbeddedMessaging() {
 	try {
@@ -286,7 +300,7 @@ function initEmbeddedMessaging() {
 			{ scrt2URL: 'https://orgfarm-23fcbe497c-dev-ed.develop.my.salesforce-scrt.com' }
 		);
 	} catch (err) {
-		console.error('Error loading Embedded Messaging: ', err);
+		console.error(err);
 	}
 };
 </script>
