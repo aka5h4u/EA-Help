@@ -13,7 +13,7 @@ html, body {
   color:#e5e7eb;
 }
 
-/* ===== FULL WIDTH HEADER / FOOTER IMAGES — NO PADDING ===== */
+/* ===== FULL WIDTH HEADER / FOOTER IMAGES ===== */
 .header-banner,
 .footer-banner {
   width:100vw;
@@ -33,7 +33,17 @@ header {
   border-bottom:1px solid #1f2937;
 }
 
-.logo {
+.logo-wrap {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-wrap img {
+  height:36px;
+}
+
+.logo-text {
   font-weight:700;
   font-size:20px;
   color:#f9fafb;
@@ -48,7 +58,6 @@ header {
   color:white;
 }
 
-/* ===== BUTTON ===== */
 .signin-btn {
   background:#3b82f6;
   border:none;
@@ -66,27 +75,21 @@ header {
   padding:80px 20px;
 }
 
-.hero h1 {
-  color:white;
-}
-
 .hero-search input {
   width:600px;
   max-width:95%;
   padding:18px;
   border-radius:14px;
   border:1px solid #374151;
-  font-size:16px;
   background:#020617;
   color:white;
 }
 
-/* ===== FULL WIDTH SECTIONS ===== */
+/* ===== SECTIONS ===== */
 .section {
   padding:60px 6%;
 }
 
-/* ===== CATEGORY GRID ===== */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -107,7 +110,7 @@ header {
   border-color:#2563eb;
 }
 
-/* ===== IMAGE BLOCK ===== */
+/* ===== IMAGE GRID ===== */
 .image-grid {
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -151,30 +154,21 @@ header {
   margin-top:8px;
 }
 
-/* ===== SUPPORT ===== */
-.support {
+/* ===== AI AGENT SECTION ===== */
+.agent-box {
   background:#111827;
-  border-radius:18px;
-  padding:50px;
-  text-align:center;
   border:1px solid #1f2937;
+  border-radius:20px;
+  padding:40px;
+  text-align:center;
 }
 
-button {
-  padding:14px 22px;
-  border-radius:12px;
-  border:none;
-  font-weight:700;
-  cursor:pointer;
-  margin:8px;
+.agent-box img {
+  width:160px;
+  margin-bottom:20px;
 }
 
-.primary { background:#2563eb; color:white; }
-.outline {
-  background:transparent;
-  border:2px solid #2563eb;
-  color:#93c5fd;
-}
+.primary { background:#2563eb; color:white; padding:14px 22px; border-radius:12px; border:none; }
 
 /* ===== FOOTER ===== */
 footer {
@@ -192,10 +186,15 @@ footer {
 <img src="header.png" class="header-banner">
 
 <header>
-  <div class="logo">Help Center Demo</div>
+  <div class="logo-wrap">
+    <img src="EA.svg">
+    <div class="logo-text">Help Center</div>
+  </div>
+
   <div class="header-search">
     <input placeholder="Search help articles">
   </div>
+
   <button class="signin-btn">Sign In</button>
 </header>
 
@@ -236,21 +235,24 @@ footer {
 <div id="articles"></div>
 </div>
 
+<!-- ===== AI AGENT / MESSAGING SECTION ===== -->
 <div class="section">
-<div class="support">
-  <h3>Still need help?</h3>
-  <button class="primary">Open Case</button>
-  <button class="outline">Start Chat</button>
-</div>
+  <div class="agent-box">
+    <img src="helpotron.png">
+    <h2>Meet Helpotron 🤖</h2>
+    <p>Your in-game style support AI. Ask anything or start a live support chat.</p>
+    <button class="primary">Launch Support Chat</button>
+  </div>
 </div>
 
 <!-- FOOTER IMAGE -->
 <img src="footer.png" class="footer-banner">
 
 <footer>
-Demo Help Center UI — Powered by @Maantic
+Demo Help Center UI — Dark Theme
 </footer>
 
+<!-- PAGE SCRIPT -->
 <script>
 const articles = [
  {title:"Reset your password", tag:"Account"},
@@ -269,9 +271,28 @@ function render(list){
     </div>
   `).join("");
 }
-
 render(articles);
 </script>
+
+<!-- ===== SALESFORCE EMBEDDED MESSAGING ===== -->
+<script type='text/javascript'>
+function initEmbeddedMessaging() {
+	try {
+		embeddedservice_bootstrap.settings.language = 'en_US';
+		embeddedservice_bootstrap.init(
+			'00Dfj00000GhufN',
+			'Github_Messaging_Setting',
+			'https://orgfarm-23fcbe497c-dev-ed.develop.my.site.com/ESWGithubMessagingSetti1768249695612',
+			{ scrt2URL: 'https://orgfarm-23fcbe497c-dev-ed.develop.my.salesforce-scrt.com' }
+		);
+	} catch (err) {
+		console.error('Error loading Embedded Messaging: ', err);
+	}
+};
+</script>
+
+<script src='https://orgfarm-23fcbe497c-dev-ed.develop.my.site.com/ESWGithubMessagingSetti1768249695612/assets/js/bootstrap.min.js'
+onload='initEmbeddedMessaging()'></script>
 
 </body>
 </html>
