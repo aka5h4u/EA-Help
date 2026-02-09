@@ -14,7 +14,7 @@ html, body {
   color:#111827;
 }
 
-/* ===== FULL WIDTH HEADER & FOOTER IMAGES ===== */
+/* ===== HEADER & FOOTER FULL WIDTH ===== */
 .header-banner,
 .footer-banner {
   width: 100vw;
@@ -24,7 +24,7 @@ html, body {
   display: block;
 }
 
-/* ===== NAV BAR ===== */
+/* ===== NAV ===== */
 header {
   background:#0f172a;
   color:white;
@@ -34,10 +34,7 @@ header {
   align-items:center;
 }
 
-.logo {
-  font-weight:700;
-  font-size:18px;
-}
+.logo { font-weight:700; font-size:18px; }
 
 .header-search input {
   padding:10px;
@@ -62,11 +59,6 @@ header {
   color:white;
   text-align:center;
   padding:70px 20px;
-}
-
-.hero h1 {
-  margin:0;
-  font-size:40px;
 }
 
 .hero-search input {
@@ -106,7 +98,7 @@ header {
   box-shadow:0 10px 24px rgba(0,0,0,0.08);
 }
 
-/* ===== 3x3 IMAGE BLOCK WITH ZOOM HOVER ===== */
+/* ===== IMAGE BLOCK — ORIGINAL SIZE ===== */
 .image-grid {
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -117,17 +109,18 @@ header {
 .img-wrap {
   overflow:hidden;
   border-radius:14px;
+  background:white;
 }
 
 .img-wrap img {
-  width:100%;
-  height:200px;
-  object-fit:cover;
+  width:100%;       /* fit column width */
+  height:auto;      /* keep original ratio */
+  display:block;
   transition: transform .45s ease;
 }
 
 .img-wrap:hover img {
-  transform: scale(1.18);
+  transform: scale(1.15);
 }
 
 /* ===== ARTICLES ===== */
@@ -148,7 +141,7 @@ header {
   margin-top:8px;
 }
 
-/* ===== SUPPORT PANEL ===== */
+/* ===== SUPPORT ===== */
 .support {
   background:#e0e7ff;
   border-radius:16px;
@@ -169,7 +162,7 @@ button {
 .primary { background:#2563eb; color:white; }
 .outline { background:white; border:2px solid #2563eb; color:#2563eb; }
 
-/* ===== FOOTER TEXT BAR ===== */
+/* ===== FOOTER ===== */
 footer {
   background:#0f172a;
   color:#cbd5f1;
@@ -181,7 +174,7 @@ footer {
 
 <body>
 
-<!-- ===== TOP STATIC HEADER IMAGE ===== -->
+<!-- TOP STATIC HEADER IMAGE -->
 <img src="header.png" class="header-banner">
 
 <header>
@@ -194,7 +187,6 @@ footer {
 
 <section class="hero">
   <h1>How can we help?</h1>
-  <p>Search guides, troubleshooting steps, and feature documentation</p>
   <div class="hero-search">
     <input id="searchBox" placeholder="Search topics, errors, features">
   </div>
@@ -230,14 +222,13 @@ footer {
 
 <div class="support">
   <h3>Still need help?</h3>
-  <p>Create a support case or start a live demo chat</p>
   <button class="primary">Open Case</button>
   <button class="outline">Start Chat</button>
 </div>
 
 </div>
 
-<!-- ===== BOTTOM STATIC FOOTER IMAGE ===== -->
+<!-- BOTTOM STATIC FOOTER IMAGE -->
 <img src="footer.png" class="footer-banner">
 
 <footer>
