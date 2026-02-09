@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Help Center Demo — Dark</title>
+<title>EA Help Center Demo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
