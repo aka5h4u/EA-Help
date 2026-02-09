@@ -189,7 +189,7 @@ header {
 /* ===== FOOTER ===== */
 footer {
   text-align:center;
-  padding:30px;
+  padding:1px;
   background:#020617;
   color:#9ca3af;
 }
@@ -256,15 +256,14 @@ footer {
   <div class="agent-box">
     <img src="helpotron.png">
     <h2>Meet Helpotron</h2>
-    <p>Your gamer-style support AI. Ask anything or start chat.</p>
-    <button class="primary">Launch Support Chat</button>
+    <p>Your gamer support AI. Ask anything or start chat.</p>
   </div>
 </div>
 
-<img src="footer.png" class="footer-banner">
+
 
 <footer>
-Demo Help Center UI — Dark Theme
+	<img src="footer.png" class="footer-banner">
 </footer>
 
 <script>
