@@ -5,17 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body {
+html, body {
   margin:0;
+  padding:0;
   font-family: Arial, Helvetica, sans-serif;
   background:#ffffff;
   color:#111;
 }
 
-/* ===== FULL WIDTH HEADER / FOOTER IMAGES ===== */
+/* ===== FULL WIDTH HEADER / FOOTER IMAGES — NO PADDING ===== */
 .header-banner,
 .footer-banner {
-  width:100%;
+  width:100vw;
+  max-width:100vw;
+  margin:0;
+  padding:0;
   display:block;
 }
 
@@ -167,7 +171,6 @@ footer {
 
 <body>
 
-<!-- HEADER IMAGE -->
 <img src="header.png" class="header-banner">
 
 <header>
@@ -185,10 +188,8 @@ footer {
   </div>
 </section>
 
-<!-- CATEGORIES -->
 <div class="section">
 <h2>Browse Categories</h2>
-
 <div class="grid">
   <div class="card">Account & Login</div>
   <div class="card">Payments</div>
@@ -197,10 +198,8 @@ footer {
 </div>
 </div>
 
-<!-- IMAGE BLOCK -->
 <div class="section">
 <h2>Feature Gallery</h2>
-
 <div class="image-grid">
   <div class="img-wrap"><img src="1.jpg"></div>
   <div class="img-wrap"><img src="2.png"></div>
@@ -214,13 +213,11 @@ footer {
 </div>
 </div>
 
-<!-- ARTICLES -->
 <div class="section">
 <h2>Popular Articles</h2>
 <div id="articles"></div>
 </div>
 
-<!-- SUPPORT -->
 <div class="section">
 <div class="support">
   <h3>Still need help?</h3>
@@ -229,7 +226,6 @@ footer {
 </div>
 </div>
 
-<!-- FOOTER IMAGE -->
 <img src="footer.png" class="footer-banner">
 
 <footer>
@@ -256,11 +252,6 @@ function render(list){
 }
 
 render(articles);
-
-document.getElementById("searchBox").addEventListener("input", e=>{
- const q = e.target.value.toLowerCase();
- render(articles.filter(a => a.title.toLowerCase().includes(q)));
-});
 </script>
 
 </body>
