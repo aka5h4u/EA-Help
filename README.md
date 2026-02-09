@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Help Center Demo</title>
+<title>Help Center Demo — Dark</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -9,8 +9,8 @@ html, body {
   margin:0;
   padding:0;
   font-family: Arial, Helvetica, sans-serif;
-  background:#ffffff;
-  color:#111;
+  background:#0b0f19;
+  color:#e5e7eb;
 }
 
 /* ===== FULL WIDTH HEADER / FOOTER IMAGES — NO PADDING ===== */
@@ -25,28 +25,32 @@ html, body {
 
 /* ===== NAV ===== */
 header {
-  background:#ffffff;
+  background:#111827;
   padding:18px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  border-bottom:1px solid #e5e7eb;
+  border-bottom:1px solid #1f2937;
 }
 
 .logo {
   font-weight:700;
   font-size:20px;
+  color:#f9fafb;
 }
 
 .header-search input {
   padding:10px 14px;
   border-radius:10px;
-  border:1px solid #d1d5db;
+  border:1px solid #374151;
   width:280px;
+  background:#0b1220;
+  color:white;
 }
 
+/* ===== BUTTON ===== */
 .signin-btn {
-  background:#2563eb;
+  background:#3b82f6;
   border:none;
   color:white;
   padding:10px 16px;
@@ -57,9 +61,13 @@ header {
 
 /* ===== HERO ===== */
 .hero {
-  background:#f3f4f6;
+  background:#111827;
   text-align:center;
   padding:80px 20px;
+}
+
+.hero h1 {
+  color:white;
 }
 
 .hero-search input {
@@ -67,8 +75,10 @@ header {
   max-width:95%;
   padding:18px;
   border-radius:14px;
-  border:1px solid #d1d5db;
+  border:1px solid #374151;
   font-size:16px;
+  background:#020617;
+  color:white;
 }
 
 /* ===== FULL WIDTH SECTIONS ===== */
@@ -84,19 +94,20 @@ header {
 }
 
 .card {
-  background:white;
+  background:#111827;
   border-radius:16px;
   padding:28px;
-  border:1px solid #e5e7eb;
+  border:1px solid #1f2937;
   transition:.25s;
 }
 
 .card:hover {
   transform:translateY(-6px);
-  box-shadow:0 12px 28px rgba(0,0,0,0.08);
+  box-shadow:0 12px 28px rgba(0,0,0,0.6);
+  border-color:#2563eb;
 }
 
-/* ===== IMAGE BLOCK — ORIGINAL SIZE ===== */
+/* ===== IMAGE BLOCK ===== */
 .image-grid {
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -107,7 +118,7 @@ header {
 .img-wrap {
   overflow:hidden;
   border-radius:16px;
-  background:#f9fafb;
+  background:#020617;
 }
 
 .img-wrap img {
@@ -123,16 +134,17 @@ header {
 
 /* ===== ARTICLES ===== */
 .article {
-  background:white;
+  background:#111827;
   border-radius:14px;
   padding:20px;
-  border:1px solid #e5e7eb;
+  border:1px solid #1f2937;
   margin-bottom:14px;
 }
 
 .tag {
   display:inline-block;
-  background:#eef2ff;
+  background:#1f2937;
+  color:#93c5fd;
   padding:4px 10px;
   border-radius:10px;
   font-size:12px;
@@ -141,10 +153,11 @@ header {
 
 /* ===== SUPPORT ===== */
 .support {
-  background:#eef2ff;
+  background:#111827;
   border-radius:18px;
   padding:50px;
   text-align:center;
+  border:1px solid #1f2937;
 }
 
 button {
@@ -157,20 +170,25 @@ button {
 }
 
 .primary { background:#2563eb; color:white; }
-.outline { background:white; border:2px solid #2563eb; color:#2563eb; }
+.outline {
+  background:transparent;
+  border:2px solid #2563eb;
+  color:#93c5fd;
+}
 
 /* ===== FOOTER ===== */
 footer {
   text-align:center;
   padding:30px;
-  background:#f9fafb;
-  color:#555;
+  background:#020617;
+  color:#9ca3af;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER IMAGE -->
 <img src="header.png" class="header-banner">
 
 <header>
@@ -226,10 +244,11 @@ footer {
 </div>
 </div>
 
+<!-- FOOTER IMAGE -->
 <img src="footer.png" class="footer-banner">
 
 <footer>
-Demo Help Center UI — Full Width Layout
+Demo Help Center UI — Powered by @Maantic
 </footer>
 
 <script>
