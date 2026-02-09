@@ -12,6 +12,8 @@ body {
   color:#111827;
 }
 
+img { max-width:100%; display:block; }
+
 /* Header */
 header {
   background:#0f172a;
@@ -22,10 +24,7 @@ header {
   align-items:center;
 }
 
-.logo {
-  font-weight:700;
-  font-size:18px;
-}
+.logo { font-weight:700; font-size:18px; }
 
 .header-search input {
   padding:10px 12px;
@@ -44,22 +43,22 @@ header {
   font-weight:600;
 }
 
+/* Header banner image */
+.header-banner {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
 /* Hero */
 .hero {
   background:#1f2937;
   color:white;
   text-align:center;
-  padding:80px 20px;
+  padding:60px 20px;
 }
 
-.hero h1 {
-  font-size:40px;
-  margin-bottom:10px;
-}
-
-.hero-search {
-  margin-top:25px;
-}
+.hero h1 { font-size:40px; }
 
 .hero-search input {
   width:560px;
@@ -68,6 +67,21 @@ header {
   border-radius:14px;
   border:none;
   font-size:16px;
+  margin-top:20px;
+}
+
+/* Image rows */
+.image-row {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:30px;
+}
+
+.image-row img {
+  border-radius:12px;
+  height:160px;
+  object-fit:cover;
 }
 
 /* Layout */
@@ -77,7 +91,6 @@ header {
   padding:50px 20px;
 }
 
-/* Categories */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -106,11 +119,6 @@ header {
   padding:18px 22px;
   margin-bottom:14px;
   border:1px solid #e5e7eb;
-  cursor:pointer;
-}
-
-.article:hover {
-  background:#f9fafb;
 }
 
 .tag {
@@ -122,7 +130,7 @@ header {
   margin-top:8px;
 }
 
-/* Support Panel */
+/* Support */
 .support {
   background:#e0e7ff;
   border-radius:16px;
@@ -140,30 +148,28 @@ header {
   margin:8px;
 }
 
-.primary {
-  background:#2563eb;
-  color:white;
+.primary { background:#2563eb; color:white; }
+.outline { background:white; border:2px solid #2563eb; color:#2563eb; }
+
+/* Footer banner */
+.footer-banner {
+  width:100%;
+  height:200px;
+  object-fit:cover;
 }
 
-.outline {
-  background:white;
-  border:2px solid #2563eb;
-  color:#2563eb;
-}
-
-/* Footer */
 footer {
   background:#0f172a;
   color:#cbd5f1;
   text-align:center;
   padding:30px;
-  margin-top:60px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER NAV -->
 <header>
   <div class="logo">Help Center Demo</div>
   <div class="header-search">
@@ -172,11 +178,22 @@ footer {
   <button class="signin-btn">Sign In</button>
 </header>
 
+<!-- HEADER IMAGE -->
+<img src="header.png" class="header-banner">
+
+<!-- HERO -->
 <section class="hero">
   <h1>How can we help?</h1>
   <p>Search guides, troubleshooting steps, and feature documentation</p>
   <div class="hero-search">
     <input id="searchBox" placeholder="Search topics, errors, features">
+  </div>
+
+  <!-- HERO IMAGES -->
+  <div class="image-row">
+    <img src="1.jpg">
+    <img src="2.jpg">
+    <img src="3.jpg">
   </div>
 </section>
 
@@ -189,8 +206,13 @@ footer {
   <div class="card">Payments</div>
   <div class="card">Integrations</div>
   <div class="card">Developer APIs</div>
-  <div class="card">Security</div>
-  <div class="card">Admin Setup</div>
+</div>
+
+<!-- CATEGORY IMAGES -->
+<div class="image-row">
+  <img src="4.jpg">
+  <img src="5.jpg">
+  <img src="6.jpg">
 </div>
 
 <h2 style="margin-top:50px;">Popular Articles</h2>
@@ -200,11 +222,21 @@ footer {
 <div class="support">
   <h3>Still need help?</h3>
   <p>Create a support case or start a live chat demo</p>
-  <button class="primary" onclick="alert('Demo: Open Case Flow')">Open Case</button>
-  <button class="outline" onclick="alert('Demo: Start Chatbot')">Start Chat</button>
+  <button class="primary">Open Case</button>
+  <button class="outline">Start Chat</button>
+
+  <!-- SUPPORT IMAGES -->
+  <div class="image-row">
+    <img src="7.jpg">
+    <img src="8.jpg">
+    <img src="9.jpg">
+  </div>
 </div>
 
 </div>
+
+<!-- FOOTER IMAGE -->
+<img src="footer.png" class="footer-banner">
 
 <footer>
 Demo Help Center UI — Built for Feature Demonstrations
@@ -215,10 +247,8 @@ const articles = [
  {title:"Reset your password", tag:"Account"},
  {title:"Fix login verification errors", tag:"Account"},
  {title:"Configure payment gateway", tag:"Payments"},
- {title:"Refund processing guide", tag:"Payments"},
  {title:"Integration setup steps", tag:"Integrations"},
- {title:"API authentication flow", tag:"Developer"},
- {title:"Create secure access tokens", tag:"Security"}
+ {title:"API authentication flow", tag:"Developer"}
 ];
 
 function render(list){
