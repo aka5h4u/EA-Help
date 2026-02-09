@@ -5,21 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body {
-  margin:0;
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
   background:#f3f4f6;
   color:#111827;
 }
 
-img { display:block; width:100%; }
-
-.header-banner {
-  width:100%;
-  height:240px;
-  object-fit:cover;
+/* ===== FULL WIDTH HEADER & FOOTER IMAGES ===== */
+.header-banner,
+.footer-banner {
+  width: 100vw;
+  max-width: 100vw;
+  height: 240px;
+  object-fit: cover;
+  display: block;
 }
 
+/* ===== NAV BAR ===== */
 header {
   background:#0f172a;
   color:white;
@@ -29,7 +34,10 @@ header {
   align-items:center;
 }
 
-.logo { font-weight:700; font-size:18px; }
+.logo {
+  font-weight:700;
+  font-size:18px;
+}
 
 .header-search input {
   padding:10px;
@@ -48,11 +56,17 @@ header {
   cursor:pointer;
 }
 
+/* ===== HERO ===== */
 .hero {
   background:#1f2937;
   color:white;
   text-align:center;
   padding:70px 20px;
+}
+
+.hero h1 {
+  margin:0;
+  font-size:40px;
 }
 
 .hero-search input {
@@ -65,6 +79,7 @@ header {
   margin-top:20px;
 }
 
+/* ===== CONTENT ===== */
 .container {
   max-width:1100px;
   margin:auto;
@@ -83,14 +98,15 @@ header {
   border-radius:14px;
   padding:26px;
   border:1px solid #e5e7eb;
-  transition:.2s;
+  transition:.25s;
 }
 
 .card:hover {
-  transform:translateY(-4px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transform:translateY(-5px);
+  box-shadow:0 10px 24px rgba(0,0,0,0.08);
 }
 
+/* ===== 3x3 IMAGE BLOCK WITH ZOOM HOVER ===== */
 .image-grid {
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -104,15 +120,17 @@ header {
 }
 
 .img-wrap img {
+  width:100%;
   height:200px;
   object-fit:cover;
-  transition: transform .4s ease;
+  transition: transform .45s ease;
 }
 
 .img-wrap:hover img {
-  transform: scale(1.15);
+  transform: scale(1.18);
 }
 
+/* ===== ARTICLES ===== */
 .article {
   background:white;
   border-radius:12px;
@@ -130,6 +148,7 @@ header {
   margin-top:8px;
 }
 
+/* ===== SUPPORT PANEL ===== */
 .support {
   background:#e0e7ff;
   border-radius:16px;
@@ -150,13 +169,7 @@ button {
 .primary { background:#2563eb; color:white; }
 .outline { background:white; border:2px solid #2563eb; color:#2563eb; }
 
-.footer-banner {
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  margin-top:60px;
-}
-
+/* ===== FOOTER TEXT BAR ===== */
 footer {
   background:#0f172a;
   color:#cbd5f1;
@@ -168,6 +181,7 @@ footer {
 
 <body>
 
+<!-- ===== TOP STATIC HEADER IMAGE ===== -->
 <img src="header.png" class="header-banner">
 
 <header>
@@ -180,6 +194,7 @@ footer {
 
 <section class="hero">
   <h1>How can we help?</h1>
+  <p>Search guides, troubleshooting steps, and feature documentation</p>
   <div class="hero-search">
     <input id="searchBox" placeholder="Search topics, errors, features">
   </div>
@@ -196,7 +211,7 @@ footer {
   <div class="card">Developer APIs</div>
 </div>
 
-<h2>Feature Gallery</h2>
+<h2 style="margin-top:50px;">Feature Gallery</h2>
 
 <div class="image-grid">
   <div class="img-wrap"><img src="1.jpg"></div>
@@ -210,17 +225,19 @@ footer {
   <div class="img-wrap"><img src="9.jpg"></div>
 </div>
 
-<h2 style="margin-top:40px;">Popular Articles</h2>
+<h2 style="margin-top:50px;">Popular Articles</h2>
 <div id="articles"></div>
 
 <div class="support">
   <h3>Still need help?</h3>
+  <p>Create a support case or start a live demo chat</p>
   <button class="primary">Open Case</button>
   <button class="outline">Start Chat</button>
 </div>
 
 </div>
 
+<!-- ===== BOTTOM STATIC FOOTER IMAGE ===== -->
 <img src="footer.png" class="footer-banner">
 
 <footer>
@@ -230,8 +247,10 @@ Demo Help Center UI — Built for Feature Demonstrations
 <script>
 const articles = [
  {title:"Reset your password", tag:"Account"},
+ {title:"Login verification issues", tag:"Account"},
  {title:"Configure payment gateway", tag:"Payments"},
- {title:"Integration setup steps", tag:"Integrations"}
+ {title:"Integration setup steps", tag:"Integrations"},
+ {title:"API authentication flow", tag:"Developer"}
 ];
 
 function render(list){
@@ -243,7 +262,13 @@ function render(list){
     </div>
   `).join("");
 }
+
 render(articles);
+
+document.getElementById("searchBox").addEventListener("input", e=>{
+ const q = e.target.value.toLowerCase();
+ render(articles.filter(a => a.title.toLowerCase().includes(q)));
+});
 </script>
 
 </body>
