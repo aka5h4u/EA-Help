@@ -203,7 +203,7 @@ footer {
 
 <div class="image-grid">
   <div class="img-wrap"><img src="1.jpg"></div>
-  <div class="img-wrap"><img src="2.jpg"></div>
+  <div class="img-wrap"><img src="2.png"></div>
   <div class="img-wrap"><img src="3.jpg"></div>
   <div class="img-wrap"><img src="4.jpg"></div>
   <div class="img-wrap"><img src="5.jpg"></div>
